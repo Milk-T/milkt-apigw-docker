@@ -1,0 +1,12 @@
+#!/bin/bash 
+#chkconfig:2345 20 90  
+#description:zookeeper  
+#processname:zookeeper  
+export JAVA_HOME=/docker-java-home/jre 
+case $1 in  
+        start) sh /usr/share/zookeeper/bin/zkServer.sh start;;  
+        stop) sh /usr/share/zookeeper/bin/zkServer.sh stop;;  
+        status) sh /usr/share/zookeeper/bin/zkServer.sh status;;  
+        restart) sh /usr/share/zookeeper/bin/zkServer.sh restart;;  
+        *) echo "require start|stop|status|restart" ;;  
+esac
